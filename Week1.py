@@ -1,92 +1,74 @@
-# 리스트 컴프리헨션
-result = [x for x in range(10) if x % 2 == 1]
-print(result)
-
-# 리스트 컴프리헨션 2차원 리스트 초기화
-n = 3
-m = 4
-array = [[0]*m]*n
-result = [[0]*m for _ in range(n)]
-print(array)
-print(result)
-
-array[1][1] = 5
-print(f"array: {array}")
-
-result[1][1] = 5
-print(f"list comprehension: {result}")
-
-array2 = []
-for _ in range(n):
-  array2.append([0]*m)
-array2[1][1] = 5
-print(f"array2: {array2}")
-
-# --------------------------
-print()
-
-a = [1, 4, 3]
-print("기본리스트 : ", a)
-
-# 리스트에 원소 삽입
-a.append(2)
-print("삽입: ", a)
-print(f"삽입: {a}")
-
-# 리스트에 원소 삽입(extend)
-a.extend([5, 11])
-print("extend: ", a)  
-
-# 오름차순 정렬
-a.sort()
-print(f"오름차순 정렬 : {a}")
-
-# 내림차순 정렬
-a.sort(reverse=True)
-print(f"내림차순 정렬 : {a}")
-
-# 리스트 원소 뒤집기
-a.reverse()
-print(f"원소 뒤집기 : {a}")
-
-# 특정 인덱스에 데이터 추가
-a.insert(2, 3)
-print(f"인덱스 2에 3 추가 : {a}")
-
-# 특정 값인 데이터 개수 세기
-print(f"값이 3인 데이터 개수: {a.count(3)}")
-
-# 특정 값 데이터 삭제
-a.remove(1)
-print(f"값이 1인 데이터 삭제 : {a}")
-
-# 리스트에서 특정 값을 가지는 원소 모두 제거
-a = [1, 2, 3, 4, 5, 5, 5]
-remove_set = {3, 5}
-result = [i for i in a if i not in remove_set]
-print(result)
-
-# --------------------------
-print()
-
-data = "Hello Wolrd"
+"""
+# set
+data = set([1,1,2,3,4,5])
 print(data)
 
-data = "Don't you know \"Python\"?"
+data = {1,1,2}
 print(data)
 
-# 문자열 연산
-a = "Hello"
-b = "World"
-print(a + " " + b)
+a = set([1,2,3,4,5])
+b = set([3,4,5,6,7])
+print(a) ; print(b)
+print(f"a | b(union): {a | b}") # union
+print(f"a & b(intersection): {a & b}") # intersection
+print(f"a - b(difference): {a - b}") # difference
+print(f"a ^ b(symmetric difference): {a ^ b}") # symmetric difference
 
-# 문자열 반복
-print(a * 3)
+"""
+"""
+data = set([1,2,3])
+print(data)
 
-print(a[0:3])
+# 새로운 원소 추가
+data.add(4)
+print(data)
 
-a = ['he','llo']
-b = ['wol','rld']
-print(a + b)
-# --------------------------
-print()
+# 새로운 원소 여러개 추가
+data.update([5,6])
+print(data)
+
+# 특정한 값을 갖는 원소 삭제
+data.remove(3)
+print(data)
+"""
+# 조건문 
+"""
+score = int(input(f"점수를 입력하세요: "))
+if score >= 90:
+  print("학점: A")
+elif score >= 80:
+  print("학점: B")
+elif score >= 70:
+  print("학점: C")
+else:
+  print("학점: F")
+
+if score >=80:
+  pass # 나중에 작성할 소스코드
+else:
+  print('성적이 80점 미만입니다.')
+
+print('프로그램을 종료합니다.')
+
+if score >=80: result = 'Success'
+else: result = 'Fail'
+
+result = 'Success' if score >= 80 else 'Fail'
+print(result)
+"""
+# ----------------------------------------------
+"""
+a = [1,2,3,4,5,5,5]
+remove_set = {3,5}
+
+result = []
+for i in a:
+  if i not in remove_set:
+    result.append(i)
+
+print(result)
+
+result = [i for i in a if i not in remove_set] # list comprehension
+print(result)
+"""
+# ----------------------------------------------
