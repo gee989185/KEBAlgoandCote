@@ -13,3 +13,15 @@ requiredFiles = [".replit", "replit.nix"]
 [deployment]
 run = ["python3", "main.py"]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Run Week1"
+
+[[workflows.workflow]]
+name = "Run Week1"
+author = 40493370
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python Week1.py"
